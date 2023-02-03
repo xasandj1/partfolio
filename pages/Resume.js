@@ -3,7 +3,7 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
 import Image from "next/image";
 import Logo from "../public/logo.png"
-import Google from "../public/Google.svg"
+import Google from "../public/google.svg"
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
