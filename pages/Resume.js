@@ -4,6 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 import Logo from "../public/logo.png"
 import Google from "../public/google.svg"
+import uzLeng from "../public/uz-lang.svg"
+import ruLeng from "../public/ru-lang.svg"
+import usLeng from "../public/us-lang.svg"
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -18,7 +21,7 @@ export default function Home() {
       <main className=" bg-white px-5 dark:bg-gray-900 md:px-20 lg:px-40">
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between dark:text-white">
-            <Image src={Logo} alt="" className="xasan" />
+            <a href={"/"}><Image src={Logo} alt="" className="xasan" /></a>
             <ul className="flex items-center">
               <li>
                 <BsFillMoonStarsFill
@@ -34,6 +37,22 @@ export default function Home() {
                   Resume
                 </a>
               </li>
+              <div className="header nav">
+                <div className="head-languages">
+                  <button className="head-lang lang-us">
+                    <span className="text-white font-semibold text-xl mr-1">US</span>
+                    <Image src={usLeng} alt="usLang"/>
+                  </button>
+                  <button className="head-lang lang-ru">
+                    <span className="text-white font-semibold text-xl mr-1">RU</span>
+                    <Image src={ruLeng} alt="usLang"/>
+                  </button>
+                  <button className="head-lang lang-uz">
+                    <span className="text-white font-semibold text-xl mr-1" >UZ</span>
+                    <Image src={uzLeng} alt="UzLang"/>
+                  </button>
+                </div>
+              </div>
             </ul>
           </nav>
             <Image src={Google}/>
