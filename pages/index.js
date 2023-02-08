@@ -29,9 +29,6 @@ export default function Home() {
   const changeLeng =()=>{
     setIconLeng(!iconLang)
   }
-  const changeLang =()=>{
-    setIconLeng(!iconLang)
-  }
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
@@ -64,7 +61,7 @@ export default function Home() {
                     <span className="text-white font-semibold text-xl mr-1">UZ</span>
                     <Image src={uzLeng} alt="UzLang"/>
                   </button>
-                  <button className={`head-lang lang-ru ${iconLang && 'active'}`} onClick={()=>changeLang()}>
+                  <button className={`head-lang lang-ru ${iconLang && 'active'}`} onClick={()=>changeLeng()}>
                     <span className="text-white font-semibold text-xl mr-1">RU</span>
                     <Image src={ruLeng} alt="usLang"/>
                   </button>
