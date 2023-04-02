@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Logo from "../public/logo.png"
 import Google from "../public/google.svg"
-import uzLeng from "../public/uz-lang.svg"
+// import uzLeng from "../public/uz-lang.svg"
 import ruLeng from "../public/ru-lang.svg"
 import usLeng from "../public/us-lang.svg"
 
@@ -49,7 +49,7 @@ export default function Home() {
                   </button>
                   <button className="head-lang lang-uz">
                     <span className="text-white font-semibold text-xl mr-1" >UZ</span>
-                    <Image src={uzLeng} alt="UzLang"/>
+                    {/* <Image src={uzLeng} alt="UzLang"/> */}
                   </button>
                 </div>
               </div>

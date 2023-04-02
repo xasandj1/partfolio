@@ -19,13 +19,14 @@ import web3 from "../public/web3.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
-import uzLeng from "../public/uz-lang.svg"
 import ruLeng from "../public/ru-lang.svg"
 import usLeng from "../public/us-lang.svg"
+import { ru,en } from "./langugaes";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [iconLang , setIconLeng] = useState(false)
+  const [lang,setLang] = useState(ru)
   const changeLeng =()=>{
     setIconLeng(!iconLang)
   }
@@ -52,37 +53,33 @@ export default function Home() {
                   className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8 xr:ml-4 sx:ml-4 sm:ml-6 md:ml-8 xs:ml-3"
                   href={"Resume"}
                 >
-                  Resume
+                  {lang.resume}
                 </a>
               </li>
+
               <div className="header nav">
                 <div className="head-languages">
-                  <button className={`head-lang lang-uz ${!iconLang && 'active'}`} onClick={()=>changeLeng()}>
-                    <span className="text-white font-semibold text-xl mr-1">UZ</span>
-                    <Image src={uzLeng} alt="UzLang"/>
-                  </button>
-                  <button className={`head-lang lang-ru ${iconLang && 'active'}`} onClick={()=>changeLeng()}>
+                  <button className={`head-lang lang-uz ${iconLang && 'active'}`} onClick={()=>changeLeng()}>
                     <span className="text-white font-semibold text-xl mr-1">RU</span>
-                    <Image src={ruLeng} alt="usLang"/>
+                    <Image src={ruLeng} alt="UzLang"/>
                   </button>
-                  <button className={`head-lang lang-us ${iconLang && 'active'}`} onClick={()=>changeLeng()}>
+                  <button className={`head-lang lang-uz ${!iconLang && 'active'}`} onClick={()=>changeLeng()}>
                     <span className="text-white font-semibold text-xl mr-1">US</span>
-                    <Image src={usLeng} alt="usLang"/>
+                    <Image src={usLeng} alt="UzLang"/>
                   </button>
                 </div>
               </div>
             </ul>
           </nav>
           <div className="text-center p-10 xr:p-0 sm:p-7 py-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
-              Xasan Djuraev
+            <h2 className="lg:text-6xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl xr:text-2xl">
+              {lang.firstName} {lang.secondName}
             </h2>
-            <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
-              Developer.
+            <h3 className="py-2 dark:text-white text-4xl lg:text-4xl md:text-3xl sm:text-3xl xr:text-xl">
+              {lang.developer}
             </h3>
-            <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
-              Freelancer providing services for programming and frontend content needs. Join me down below and
-              lets get cracking!
+            <p className="text-lg py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl xr:text-2xl">
+              {lang.text}
             </p>
             <div className="text-5xl flex justify-center gap-16 sm:gap-16 xs:gap-10 sx:gap-8 xr:gap-6 py-3 text-gray-600 dark:text-gray-400">
               <a href="https://web.telegram.org/k/" className=""><FaTelegram /></a>
@@ -99,12 +96,11 @@ export default function Home() {
         </section>
         <section>
           <div className="sm:py-3 xr:py-4 py-0">
-            <h3 className="text-3xl py-1 dark:text-white ">Services I offer</h3>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-              Since the beginning of my journey as a freelance frontend and
-              developer, Ive done remote work for
-              <span className="text-teal-500"> agencies </span>
-              consulted for <span className="text-teal-500">startups </span>
+            <h3 className="text-4xl  py-1 dark:text-white ">{lang.job}</h3>
+            <p className="text-xl py-2 leading-8 text-gray-800 dark:text-gray-200">
+              {lang.jobTxt}
+              <span className="text-teal-500"> {lang.agencies} </span>
+              consulted for <span className="text-teal-500">{lang.startups} </span>
               and collaborated with talanted people to create digital products
               for both business and consumer use.
             </p>
